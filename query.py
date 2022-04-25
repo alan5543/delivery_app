@@ -78,7 +78,11 @@ def takeOrder(product_id):
                 cursor.execute(select_query)
                 max_id = cursor.fetchone()
 
-                if int(product_id) > int(max_id[0]):
+                if max_id[0] is None:
+                    # Not Any Records in the database
+                    print('There are no any records.') 
+
+                elif int(product_id) > int(max_id[0]):
                     # Not Existed Product because exceed the max id
                     print('order does not exist')
 
