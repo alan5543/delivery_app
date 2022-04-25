@@ -1,2 +1,2 @@
 pip install -e .
-python database.py
+python3 database.py
