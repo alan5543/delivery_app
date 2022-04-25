@@ -68,45 +68,44 @@ def createNewOrder(source, detination):
 
 
 def takeOrder(product_id):
-    try:
-        if product_id.isdigit():
-            # The API for insert new order by source and destination
-            db = sql.connect('Product.db')
-            cursor = db.cursor()
+    if product_id.isdigit():
+        try:
+                # The API for insert new order by source and destination
+                db = sql.connect('Product.db')
+                cursor = db.cursor()
 
-            select_query = "SELECT MAX(id) FROM products"
-            cursor.execute(select_query)
-            max_id = cursor.fetchone()
+                select_query = "SELECT MAX(id) FROM products"
+                cursor.execute(select_query)
+                max_id = cursor.fetchone()
 
-            if int(product_id) > int(max_id[0]):
-                # Not Existed Product because exceed the max id
-                print('order does not exist')
+                if int(product_id) > int(max_id[0]):
+                    # Not Existed Product because exceed the max id
+                    print('order does not exist')
 
-            else:
-                # check the product is taken away or not
-                select_query = "SELECT source, destination FROM products WHERE id = ?"
-                cursor.execute(select_query, (product_id))
-                product = cursor.fetchone()
-
-                if product:
-                    cursor.execute('DELETE FROM products WHERE id = ?', (product_id,))
                 else:
-                    print('order already taken')
-            
-            cursor.close()
+                    # check the product is taken away or not
+                    select_query = "SELECT source, destination FROM products WHERE id = ?"
+                    cursor.execute(select_query, (product_id))
+                    product = cursor.fetchone()
 
-            # commit the db change
-            db.commit()
+                    if product:
+                        cursor.execute('DELETE FROM products WHERE id = ?', (product_id,))
+                    else:
+                        print('order already taken')
+                
+                cursor.close()
 
-        else:
-            print("Please enter a numerical ID")
+                # commit the db change
+                db.commit()
 
-    except sql.Error as error:
-        print("Failed to read data from sqlite table", error)
+        except sql.Error as error:
+            print("Failed to read data from sqlite table", error)
 
-    finally:
-        if db:
-            db.close()
+        finally:
+            if db:
+                db.close()
+    else:
+        print("Please enter a numerical ID")
 
 
 
