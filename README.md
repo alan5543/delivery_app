@@ -1,5 +1,5 @@
-# lalamove
-A command line program to simulate a very simple Lalamove. This program allows the users to interact with the database from the command line executable, such as creating a new order, finding out all orders, and taking out the orders.
+# Delivery App
+A command line program to simulate a delivery usecase in command line app. This program allows the users to interact with the database from the command line executable, such as creating a new order, finding out all orders, and taking out the orders.
 
 ## Explaining the technology in use
 
