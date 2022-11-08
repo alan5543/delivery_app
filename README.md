@@ -4,7 +4,7 @@ A command line program to simulate a delivery usecase in command line app. This 
 ## Explaining the technology in use
 
 ### Python
-Python is used to build a command line app of the Lalamove operation. CMD Program is a program which operates from the command line or from a shell. The reason of using Python to create the project is due to its flexiblity and working well with existing program. There are lots of Python libraries and modules to create a command line app from parsing arguments and options options to flagging to a CLI frameworks. Comparing to other programming, Python is a relatively lightweight languages, that is suitable to create a small size of CMD app to simulate the operation of Lalamove.
+Python is used to build a command line app of the IT logistic operation. CMD Program is a program which operates from the command line or from a shell. The reason of using Python to create the project is due to its flexiblity and working well with existing program. There are lots of Python libraries and modules to create a command line app from parsing arguments and options options to flagging to a CLI frameworks. Comparing to other programming, Python is a relatively lightweight languages, that is suitable to create a small size of CMD app to simulate the operation of IT logistic.
 
 ### Click
 Click is a Python package easily to create a beautiful command line user interface with a little code. In this project, the module of click command and click group are suggested to be used for distinguish different commands of usage.
